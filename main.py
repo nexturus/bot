@@ -11,6 +11,10 @@ def start(message:telebot.types.Message):
     bot.send_message(chat_id=message.chat.id, text="Вас выбрали для отбора самых везучих людей на планете! Для такого случая, мы загадали число от 1 до 10. Попробуйте отгадать.")
     guesses[message.chat.username] = str(random.randint(1,10))
 
+@bot.message_handler(commands=["help"])
+def help(message:telebot.types.Message):
+    bot.send_message(chat_id=message.chat.id, text=f"Вы, {message.chat.username}, учавствуете в небольшом испытании... Просто. угадывайте. числа.", reply_to_message_id=message.id)
+
 @bot.message_handler(content_types=["text"])
 def send(message:telebot.types.Message):
     if message == guesses[message.chat.username]:
