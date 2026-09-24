@@ -21,3 +21,4 @@ def send(message:telebot.types.Message):
         guesses[message.chat.username] = str(random.randint(1, 10))
 
 bot.infinity_polling()
+# test
