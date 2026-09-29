@@ -27,4 +27,5 @@ def send(message:telebot.types.Message):
 bot.infinity_polling()
 # test
 #test1
+# i have no ideas what to type whatsoever smh
 
